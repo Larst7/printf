@@ -33,7 +33,7 @@ int print_unsigned(va_list types, char buffer[],
 
 	j++;
 
-	return (write_unsgnd(0, x, buffer, flags, width, precision, size));
+	return (write_unsgnd(0, j, buffer, flags, width, precision, size));
 }
 
 /*Print unsigned number in octal (base 8)*/
@@ -74,7 +74,7 @@ int print_octal(va_list types, char buffer[],
 	if (flags & F_HASH && init_numb != 0)
 		buffer[j--] = '0';
 
-	x++;
+	j++;
 
 	return (write_unsgnd(0, j, buffer, flags, width, precision, size));
 }
@@ -161,5 +161,5 @@ int print_hexa(va_list types, char set_to[], char buffer[],
 
 	j++;
 
-	return (write_unsgnd(0, x, buffer, flags, width, precision, size));
+	return (write_unsgnd(0, j, buffer, flags, width, precision, size));
 }
