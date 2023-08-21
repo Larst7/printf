@@ -80,10 +80,10 @@ return (write(1, "(null)", 6));
 
 while (strng[j] != '\0')
 {
-if (is_printable(strng[x]))
-buffer[j + offset] = strng[x];
+if (is_printable(strng[j]))
+buffer[j + offset] = strng[j];
 else
-offset += append_hexa_code(strng[x], buffer, j + offset);
+offset += append_hexa_code(strng[j], buffer, j + offset);
 
 j++;
 }
