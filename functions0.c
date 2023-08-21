@@ -10,6 +10,7 @@
 * @precision: specifies the precision
 * @width: width of array
 * @size: specifies the size
+* handle_write_char: return type
 * Return: number of characters printed
 */
 int print_char(va_list types, char buffer[],
@@ -50,7 +51,7 @@ strng = "      ";
 }
 
 while (strng[len] != '\0')
-length++;
+len++;
 
 if (precision >= 0 && precision < len)
 len = precision;
@@ -107,6 +108,7 @@ return (write(1, "%%", 1));
 * @width: get width
 * @precision: specifies the precision
 * @size: specifies the size
+* write_number: ...
 * Return: number of characters printed
 */
 int print_int(va_list types, char buffer[],
