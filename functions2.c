@@ -78,7 +78,7 @@ UNUSED(size);
 if (strng == NULL)
 return (write(1, "(null)", 6));
 
-while (strng[x] != '\0')
+while (strng[j] != '\0')
 {
 if (is_printable(strng[x]))
 buffer[j + offset] = strng[x];
