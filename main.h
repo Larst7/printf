@@ -7,11 +7,11 @@
 #define UNUSED(i) (void)(i)
 #define BUFF_SIZE 1024
 
-/*Macros size*/
+/*Macros defining size*/
 #define S_LONG 2
 #define S_SHORT 1
 
-/*Macros Flags*/
+/*Macros defining Flags*/
 #define F_ZERO 4
 #define F_HASH 8
 #define F_MINUS 1
@@ -38,9 +38,8 @@ int (*fn)(va_list, char[], int, int, int, int);
 typedef struct fmt fmt_t;
 
 int _printf(const char *format, ...);
-int handle_print(const char *fmt, int *j,
+int handle_print(const char *fmt, int *x,
 va_list args, char buffer[], int flags, int width, int precision, int size);
-
 /*Functions Prototypes*/
 
 /*Func that prints numbers*/
@@ -69,10 +68,10 @@ int print_pointer(va_list types, char buffer[],
 int flags, int width, int precision, int size);
 
 /*Func that handle other specifiers*/
-int get_flags(const char *format, int *j);
-int get_width(const char *format, int *j, va_list args);
-int get_precision(const char *format, int *j, va_list args);
-int get_size(const char *format, int *j);
+int get_flags(const char *format, int *x);
+int get_width(const char *format, int *x, va_list index);
+int get_precision(const char *format, int *x, va_list index);
+int get_size(const char *format, int *x);
 
 /*Func that prints strings in reverse*/
 int print_reverse(va_list types, char buffer[],
